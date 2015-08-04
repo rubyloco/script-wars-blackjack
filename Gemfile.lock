@@ -1,7 +1,13 @@
+PATH
+  remote: .
+  specs:
+    script-wars-blackjack (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
+    rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -20,7 +26,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (~> 1.10)
+  rake (~> 10.0)
   rspec
+  script-wars-blackjack!
 
 BUNDLED WITH
-   1.10.5
+   1.10.6
