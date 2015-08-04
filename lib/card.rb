@@ -7,7 +7,7 @@ class Card
     @name = name
   end
 
-  def value
+  def values
     if FACE_CARDS.include? name
       [10]
     elsif name == :ace
