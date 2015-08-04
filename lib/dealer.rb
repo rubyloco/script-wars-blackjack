@@ -1,3 +1,6 @@
+require 'player'
+require 'bigdecimal'
+
 class Dealer
   attr_reader :players
 
@@ -6,6 +9,6 @@ class Dealer
   end
 
   def add_player(name)
-    @players << name
+    @players << Player.new(name, 1000)
   end
 end

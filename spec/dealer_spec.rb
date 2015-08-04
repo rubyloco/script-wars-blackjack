@@ -6,6 +6,6 @@ RSpec.describe Dealer do
     dealer.add_player 'Chris'
     dealer.add_player 'Hunter'
 
-    expect(dealer.players).to eq(['Chris', 'Hunter'])
+    expect(dealer.players.map(&:name)).to eq(['Chris', 'Hunter'])
   end
 end
