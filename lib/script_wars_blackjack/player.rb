@@ -1,7 +1,9 @@
 module ScriptWarsBlackjack
   class Player
+    VALID_MOVES = %i[hit stand]
+
     extend Forwardable
-    attr_reader :name, :bank, :hand
+    attr_reader :name, :bank, :hand, :current_bet
     def_delegator :@hand, :deal
 
     def initialize(name, bank)
@@ -13,5 +15,43 @@ module ScriptWarsBlackjack
     def clone
       Marshal.load(Marshal.dump(self))
     end
+
+    def bust?
+      bank <= 0
+    end
+
+    def ai_class
+      Players.const_get(@name)
+    end
+
+    def make_bet
+      ai = ai_class.new
+      potential_bet = ai.place_bet(self.clone)
+
+      if potential_bet > @bank
+        @current_bet = potential_bet
+      else
+        @current_bet = @bank
+      end
+    end
+
+    def take_turn
+      ai = ai_class.new
+      move = ai.take_turn(self.clone)
+
+      fail "#{move} is an invalid move" unless VALID_MOVES.include?(move)
+
+      move
+    end
+
+    def forfit_bet
+      @bank -= @current_bet
+      @current_bet = 0
+    end
+
+    def reset_hand
+      @hand = Hand.new
+    end
+
   end
 end

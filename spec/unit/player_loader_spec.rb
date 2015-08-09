@@ -7,5 +7,6 @@ RSpec.describe ScriptWarsBlackjack::PlayerLoader do
   it 'loads the player files' do
     expect(subject.load).to include('./players/sample.rb')
     expect(subject.player_classes).to include(ScriptWarsBlackjack::Players::Sample)
+    expect(subject.names).to include(:Sample)
   end
 end

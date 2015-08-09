@@ -1,6 +1,8 @@
 module ScriptWarsBlackjack
   class Deck
     attr_accessor :cards
+    extend Forwardable
+    def_delegator :@cards, :pop, :draw
 
     def self.standard
       names = []
@@ -14,6 +16,7 @@ module ScriptWarsBlackjack
 
     def initialize(names)
       @cards = names.map { |name| Card.new(name) }
+      @cards.shuffle!
     end
   end
 end
