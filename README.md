@@ -1,6 +1,6 @@
 # Script Wars: Blackjack
 
-[![Code Climate](https://codeclimate.com/github/rubyloco/script-wars-blackjack/badges/gpa.svg)](https://codeclimate.com/github/rubyloco/script-wars-blackjack) [![Test Coverage](https://codeclimate.com/github/rubyloco/script-wars-blackjack/badges/coverage.svg)](https://codeclimate.com/github/rubyloco/script-wars-blackjack/coverage)
+[![Build Status](https://travis-ci.org/rubyloco/script-wars-blackjack.svg)](https://travis-ci.org/rubyloco/script-wars-blackjack) [![Code Climate](https://codeclimate.com/github/rubyloco/script-wars-blackjack/badges/gpa.svg)](https://codeclimate.com/github/rubyloco/script-wars-blackjack) [![Test Coverage](https://codeclimate.com/github/rubyloco/script-wars-blackjack/badges/coverage.svg)](https://codeclimate.com/github/rubyloco/script-wars-blackjack/coverage)
 
 ## Getting Started
 
