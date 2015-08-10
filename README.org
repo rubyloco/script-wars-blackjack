@@ -1,1 +1,9 @@
 * Script Wars: Blackjack
+
+** Getting Started
+
+# Fork this repo
+# Make a branch like =git checkout -b my_name/my_ai_name=
+# Run =bundle exec thor new_ai my_ai_name= to get a new ai
+# Test it locally with =bin/runner=
+# Commit it and make a pull request
