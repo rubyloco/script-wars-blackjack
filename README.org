@@ -2,8 +2,8 @@
 
 ** Getting Started
 
-# Fork this repo
-# Make a branch like =git checkout -b my_name/my_ai_name=
-# Run =bundle exec thor new_ai my_ai_name= to get a new ai
-# Test it locally with =bin/runner=
-# Commit it and make a pull request
+1. Fork this repo
+2. Make a branch like =git checkout -b my_name/my_ai_name=
+3. Run =bundle exec thor new_ai my_ai_name= to get a new ai
+4. Test it locally with =bin/runner=
+5. Commit it and make a pull request
