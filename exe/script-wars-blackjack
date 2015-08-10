@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'script_wars_blackjack'
+require 'logger'
+
+include ScriptWarsBlackjack
+LOGGER = Logger.new(STDOUT)
+LOGGER.level = Logger::DEBUG
+
+@player_loader = PlayerLoader.new('./players')
+
+@names = if ENV['PLAYERS']
+  ENV['PLAYERS'].split(',').map(&:to_sym)
+else
+  @player_loader.names
+end
+
+@runner = Runner.new(@names, LOGGER)
+@runner.start
