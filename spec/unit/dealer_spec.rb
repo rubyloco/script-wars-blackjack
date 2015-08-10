@@ -18,6 +18,17 @@ RSpec.describe ScriptWarsBlackjack::Dealer do
     expect(subject.hand).to be_a ScriptWarsBlackjack::Hand
   end
 
+  it "knows that the best hand is 0 on initialization" do
+    expect(subject.best_hand).to eq 0
+  end
+
+  it "knows that the best hand is 0 on initialization" do
+    deck1 = subject.deck
+    deck2 = subject.reset_deck
+    expect(deck1.compare(deck2)).to eq false
+
+  end
+
   it "keeps track of non bust players" do
     subject.add_player 'The House', 1000
     subject.add_player 'You', 0
