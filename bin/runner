@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-p ENV
 require 'bundler/setup'
 require 'script_wars_blackjack'
 
