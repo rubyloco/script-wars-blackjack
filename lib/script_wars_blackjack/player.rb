@@ -49,8 +49,17 @@ module ScriptWarsBlackjack
       @current_bet = 0
     end
 
+    def win_bet
+      @bank += @current_bet * 2
+      @current_bet = 0
+    end
+
     def reset_hand
       @hand = Hand.new
+    end
+
+    def best_hand
+      @hand.values.select { |v| v <= 21 }.max
     end
 
   end

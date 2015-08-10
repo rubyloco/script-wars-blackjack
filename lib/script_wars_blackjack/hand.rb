@@ -14,8 +14,8 @@ module ScriptWarsBlackjack
       @cards.inject([0]) { |memo, card| add(memo, card.values) }
     end
 
-    def bust?
-      values.any? { |value| value >= 21 }
+    def over?(value = 21)
+      values.any? { |value| value > 21 }
     end
 
     private

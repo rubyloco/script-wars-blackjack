@@ -16,6 +16,5 @@ module ScriptWarsBlackjack
     def player_classes
       names.map { |c| Players.const_get(c) }
     end
-
   end
 end

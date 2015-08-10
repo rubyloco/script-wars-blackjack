@@ -26,8 +26,8 @@ module ScriptWarsBlackjack
       @players.reject(&:bust?)
     end
 
-    def dealers_total
-      21
+    def best_hand
+      hand.values.min
     end
 
     def reset_deck
@@ -38,5 +38,8 @@ module ScriptWarsBlackjack
       @hand = Hand.new
     end
 
+    def name
+      'The Dealer'
+    end
   end
 end
