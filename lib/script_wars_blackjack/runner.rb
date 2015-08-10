@@ -57,6 +57,10 @@ module ScriptWarsBlackjack
       @dealer.players_not_bust.each do |player|
         state = GameState.new(player.clone, @dealer.hand.clone)
         case player.take_turn(state)
+        when :flip_table
+          @logger.info "#{player.name} flipped the table '(╯°□°）╯︵ ┻━┻'"
+          @logger.info "#{player.name} gave up..."
+          player.give_up
         when :stand
           @logger.debug "#{player.name} stood"
         when :hit
