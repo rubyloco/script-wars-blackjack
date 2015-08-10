@@ -7,7 +7,7 @@ rvm:
   - 2.2.1
   - 2.2.2
   - ruby-head
-  - jruby-head
+  - rbx-2
 
 before_install:
   - gem install bundler -v 1.10.4
@@ -17,7 +17,7 @@ before_install:
 gemfile:
   - Gemfile
 
-script: rspec spec
+script: bundle exec rspec spec
 
 notifications:
   email: false
