@@ -18,5 +18,9 @@ module ScriptWarsBlackjack
       @cards = names.map { |name| Card.new(name) }
       @cards.shuffle!
     end
+
+    def compare(deck)
+      self.cards == deck.cards
+    end
   end
 end

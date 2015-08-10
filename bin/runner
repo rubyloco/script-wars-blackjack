@@ -5,7 +5,7 @@ require 'script_wars_blackjack'
 
 include ScriptWarsBlackjack
 LOGGER = Logger.new(STDOUT)
-LOGGER.level = Logger::DEBUG
+LOGGER.level = ENV['DEBUG'].nil? ? Logger::INFO : Logger::DEBUG
 
 @player_loader = PlayerLoader.new('./players')
 
