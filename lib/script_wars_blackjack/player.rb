@@ -1,3 +1,4 @@
+require 'pry'
 module ScriptWarsBlackjack
   class Player
     VALID_MOVES = %i[hit stand]
@@ -17,7 +18,7 @@ module ScriptWarsBlackjack
     end
 
     def bust?
-      bank <= 0
+      @bank <= 0
     end
 
     def ai_class
@@ -27,7 +28,7 @@ module ScriptWarsBlackjack
     def make_bet(player_state)
       ai = ai_class.new
       potential_bet = ai.place_bet(player_state)
-      if potential_bet > @bank
+      if potential_bet <= @bank
         @current_bet = potential_bet
       else
         @current_bet = @bank
