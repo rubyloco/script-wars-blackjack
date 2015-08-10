@@ -15,7 +15,7 @@ module ScriptWarsBlackjack
     end
 
     def over?(value = 21)
-      values.any? { |val| val > 21 }
+      values.any? { |val| val > value }
     end
 
     def clone

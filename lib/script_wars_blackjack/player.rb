@@ -61,6 +61,5 @@ module ScriptWarsBlackjack
     def best_hand
       @hand.values.select { |v| v <= 21 }.max
     end
-
   end
 end

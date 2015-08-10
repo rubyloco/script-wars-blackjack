@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe ScriptWarsBlackjack::Hand do
-  it "10, King is 20" do
+  it '10, King is 20' do
     hand = ScriptWarsBlackjack::Hand.new
 
     hand.deal ScriptWarsBlackjack::Card.new(10)

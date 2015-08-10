@@ -13,6 +13,5 @@ require 'script_wars_blackjack/players'
 require 'script_wars_blackjack/player_loader'
 require 'script_wars_blackjack/runner'
 
-
 module ScriptWarsBlackjack
 end

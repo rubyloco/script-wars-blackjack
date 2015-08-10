@@ -1,7 +1,6 @@
 module ScriptWarsBlackjack
   module Players
     class Sample
-
       def place_bet(state)
         1000
       end
@@ -13,7 +12,6 @@ module ScriptWarsBlackjack
           :stand
         end
       end
-
     end
   end
 end

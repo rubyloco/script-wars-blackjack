@@ -34,7 +34,7 @@ module ScriptWarsBlackjack
     end
 
     def take_starting_cards
-      @logger.debug "Dealing starting cards"
+      @logger.debug 'Dealing starting cards'
 
       deal_card_to(@dealer)
 
@@ -60,7 +60,6 @@ module ScriptWarsBlackjack
         when :stand
           @logger.debug "#{player.name} stood"
         when :hit
-          card = @dealer.deck.draw
           deal_card_to(player)
 
           if player.hand.over?
@@ -74,9 +73,7 @@ module ScriptWarsBlackjack
 
     def ensure_dealer_min
       @logger.debug "Ensuring dealer's hand >= 17"
-      if @dealer.best_hand < 17
-        deal_card_to(@dealer)
-      end
+      deal_card_to(@dealer) if @dealer.best_hand < 17
     end
 
     def calculate_payouts
@@ -99,9 +96,8 @@ module ScriptWarsBlackjack
       if winner
         @logger.info "#{winner.name} won with '#{winner.bank}'"
       else
-        @logger.info "The house wins"
+        @logger.info 'The house wins'
       end
     end
-
   end
 end

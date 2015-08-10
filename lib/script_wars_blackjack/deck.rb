@@ -20,7 +20,7 @@ module ScriptWarsBlackjack
     end
 
     def compare(deck)
-      self.cards == deck.cards
+      @cards == deck.cards
     end
   end
 end
