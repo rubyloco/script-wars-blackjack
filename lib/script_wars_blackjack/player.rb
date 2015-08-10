@@ -38,7 +38,8 @@ module ScriptWarsBlackjack
       ai = ai_class.new
       move = ai.take_turn(player_state)
 
-      fail "#{move} is an invalid move" unless VALID_MOVES.include?(move)
+      fail ScriptWarsBlackjack::InvalidMoveError,
+           "#{move} is an invalid move" unless VALID_MOVES.include?(move)
 
       move
     end
