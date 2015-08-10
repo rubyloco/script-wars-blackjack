@@ -17,7 +17,7 @@ module ScriptWarsBlackjack
     end
 
     def bust?
-      bank <= 0
+      @bank <= 0
     end
 
     def ai_class

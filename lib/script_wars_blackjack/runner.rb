@@ -80,7 +80,7 @@ module ScriptWarsBlackjack
       @dealer.players_not_bust.each do |player|
         @logger.debug "Dealer best hand: #{@dealer.best_hand}"
         @logger.debug "#{player.name}'s' best hand: #{player.best_hand}"
-        unless player.hand.over?(@dealer.best_hand)
+        if player.hand.over?(@dealer.best_hand)
           player.win_bet
         else
           player.forfit_bet

@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require 'bundler/setup'
 require 'script_wars_blackjack'
 
@@ -14,6 +13,5 @@ LOGGER.level = ENV['DEBUG'].nil? ? Logger::INFO : Logger::DEBUG
 else
   @player_loader.names
 end
-
 @runner = Runner.new(@names, LOGGER)
 @runner.start
