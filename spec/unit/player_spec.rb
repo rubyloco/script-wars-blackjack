@@ -1,5 +1,7 @@
 RSpec.describe ScriptWarsBlackjack::Player do
   subject { described_class.new :Sample, 1000 }
+  let(:dealer_hand) { subject.hand }
+  let(:game_state) { ScriptWarsBlackjack::GameState.new(subject.clone, dealer_hand.clone) }
   let(:bust_player) { described_class.new 'Sample', 0 }
   let(:card) { ScriptWarsBlackjack::Card.new(:king) }
 
@@ -37,18 +39,18 @@ RSpec.describe ScriptWarsBlackjack::Player do
   end
 
   it "can make a bet" do
-    expect(subject.make_bet).to eq(1000)
+    expect(subject.make_bet(game_state)).to eq(1000)
   end
 
   it "can loose a bet" do
-    subject.make_bet
+    subject.make_bet(game_state)
     subject.forfit_bet
 
     expect(subject.bank).to eq(0)
   end
 
   it "can take a turn" do
-    expect(subject.take_turn).to eq(:stand)
+    expect(subject.take_turn(game_state)).to eq(:hit)
   end
 
 end
