@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "script_wars_blackjack"
+require 'bundler/setup'
+require 'script_wars_blackjack'
 
 include ScriptWarsBlackjack
 LOGGER = Logger.new(STDOUT)
