@@ -1,4 +1,3 @@
-require 'pry'
 module ScriptWarsBlackjack
   module Players
     # DirkAi - By dlink87
@@ -9,7 +8,6 @@ module ScriptWarsBlackjack
       end
 
       def take_turn(state)
-        # binding.pry
         if state.turn_player.hand.values.min < state.dealer_hand.values.min + 10
           :hit
         else
