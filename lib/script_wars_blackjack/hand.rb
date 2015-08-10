@@ -23,7 +23,7 @@ module ScriptWarsBlackjack
     end
 
     private
-    
+
     def add(values1, values2)
       values = []
       values1.each do |v1|

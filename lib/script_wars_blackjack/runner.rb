@@ -37,13 +37,13 @@ module ScriptWarsBlackjack
       @logger.debug "Dealing starting cards"
 
       deal_card_to(@dealer)
-      
-      2.times do 
+
+      2.times do
         @dealer.players_not_bust.each do |player|
           deal_card_to(player)
         end
       end
-      
+
       deal_card_to(@dealer)
     end
 
