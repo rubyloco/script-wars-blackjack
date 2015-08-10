@@ -9,3 +9,7 @@
 3. Run `bundle exec thor new_ai my_ai_name` to get a new ai
 4. Test it locally with `bin/runner`
 5. Commit it and make a pull request
+
+## Player Script
+
+If you are working on a player script, see the example scripts in players/sample.rb
