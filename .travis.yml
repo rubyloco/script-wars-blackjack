@@ -7,7 +7,6 @@ rvm:
   - 2.2.1
   - 2.2.2
   - ruby-head
-  - jruby-head
   - rbx-2
 
 before_install:
