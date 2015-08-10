@@ -18,7 +18,12 @@ module ScriptWarsBlackjack
       values.any? { |value| value > 21 }
     end
 
+    def clone
+      Marshal.load(Marshal.dump(self))
+    end
+
     private
+    
     def add(values1, values2)
       values = []
       values1.each do |v1|

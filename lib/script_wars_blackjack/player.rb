@@ -24,10 +24,9 @@ module ScriptWarsBlackjack
       Players.const_get(@name)
     end
 
-    def make_bet
+    def make_bet(player_state)
       ai = ai_class.new
-      potential_bet = ai.place_bet(self.clone)
-
+      potential_bet = ai.place_bet(player_state)
       if potential_bet > @bank
         @current_bet = potential_bet
       else
@@ -35,9 +34,9 @@ module ScriptWarsBlackjack
       end
     end
 
-    def take_turn
+    def take_turn(player_state)
       ai = ai_class.new
-      move = ai.take_turn(self.clone)
+      move = ai.take_turn(player_state)
 
       fail "#{move} is an invalid move" unless VALID_MOVES.include?(move)
 

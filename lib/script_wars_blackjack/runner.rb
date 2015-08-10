@@ -1,4 +1,3 @@
-require 'pry'
 module ScriptWarsBlackjack
   class Runner
     def initialize(player_names, logger = Logger.new(STDOUT))
@@ -28,7 +27,8 @@ module ScriptWarsBlackjack
 
     def gather_bets
       @dealer.players_not_bust.each do |player|
-        player.make_bet
+        state = GameState.new(player.clone, @dealer.hand.clone)
+        player.make_bet(state)
         @logger.debug "#{player.name} bet '#{player.current_bet}'"
       end
     end
@@ -37,9 +37,13 @@ module ScriptWarsBlackjack
       @logger.debug "Dealing starting cards"
 
       deal_card_to(@dealer)
-      @dealer.players_not_bust.each do |player|
-        deal_card_to(player)
+      
+      2.times do 
+        @dealer.players_not_bust.each do |player|
+          deal_card_to(player)
+        end
       end
+      
       deal_card_to(@dealer)
     end
 
@@ -51,7 +55,8 @@ module ScriptWarsBlackjack
 
     def take_moves
       @dealer.players_not_bust.each do |player|
-        case player.take_turn
+        state = GameState.new(player.clone, @dealer.hand.clone)
+        case player.take_turn(state)
         when :stand
           @logger.debug "#{player.name} stood"
         when :hit
