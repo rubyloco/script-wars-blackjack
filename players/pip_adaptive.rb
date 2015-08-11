@@ -1,6 +1,32 @@
 require "yaml"
 require 'pip_ai/node'
 
+=begin
+Blackjack AI (Adaptive 1)
+---------------------
+
+This AI (Adaptive 1) only makes decisions based on it's own cards, ignoring the dealer completely other than to hit or stand.
+
+Method: Each iteration, the AI references a tree of old hands to see whether to hit, stand, or split (split not implemented).
+
+Hand storage tree:
+
+	root
+    	/  \
+       A    2 ....
+      / \ ....
+     A   2
+
+Each node has a hash of children, as well as containing a win number and loss number. Children will automatically be created if the hand has never been played.
+
+Rules:
+If the hand has never been played, stand.
+If the win ratio (win number/loss number) is high, stand.
+Else, hit.
+
+Possible extra strategies: check avg. win ratio of children, if it is higher then hit.
+=end
+
 module ScriptWarsBlackjack
   module Players
     # Pip - By user

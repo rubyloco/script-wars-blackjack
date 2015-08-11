@@ -9,7 +9,7 @@ module ScriptWarsBlackjack
       end
 
       def win_ratio
-        0 if @losses == 0
+        1 if @losses == 0
         @wins / @losses
       end
 
@@ -22,7 +22,7 @@ module ScriptWarsBlackjack
       end
 
       def stand?
-        win_ratio > 0.5
+        win_ratio > 0.25
       end
     end
   end
