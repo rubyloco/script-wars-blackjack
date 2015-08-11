@@ -34,6 +34,10 @@ module ScriptWarsBlackjack
     end
 
     def take_starting_cards
+      @dealer.players.each do |player|
+        @logger.info "#{player.name}'s bank: #{player.bank}"
+      end
+
       @logger.debug 'Dealing starting cards'
 
       deal_card_to(@dealer)
