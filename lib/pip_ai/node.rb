@@ -9,6 +9,7 @@ module ScriptWarsBlackjack
       end
 
       def win_ratio
+        1 if @losses == 0
         @wins / @losses
       end
 
@@ -20,8 +21,8 @@ module ScriptWarsBlackjack
         @losses += 1
       end
 
-      def hit?
-        win_ratio > 0.5
+      def stand?
+        win_ratio > 0.25
       end
     end
   end
