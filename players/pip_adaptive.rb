@@ -9,7 +9,7 @@ module ScriptWarsBlackjack
       include PipAI
 
       def initialize()
-        @storage_path = File.expand_path("../pip_adaptive_storage.yml", __FILE__)
+        @storage_path = File.expand_path("../pip_adaptive_1_storage.yml", __FILE__)
         @data = {}
         save_data(@storage_path)
         File.new(@storage_path) unless File.exists?(@storage_path)
