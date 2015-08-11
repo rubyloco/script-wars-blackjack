@@ -1,6 +1,6 @@
 module ScriptWarsBlackjack
   class Player
-    VALID_MOVES = %i[hit stand]
+    VALID_MOVES = %i[hit stand flip_table]
 
     extend Forwardable
     attr_reader :name, :bank, :hand, :current_bet
@@ -18,6 +18,10 @@ module ScriptWarsBlackjack
 
     def bust?
       @bank <= 0
+    end
+
+    def give_up
+      @bank = 0
     end
 
     def ai_class

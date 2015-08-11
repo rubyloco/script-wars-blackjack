@@ -58,4 +58,9 @@ RSpec.describe ScriptWarsBlackjack::Player do
     expect(subject.take_turn(game_state)).to eq(:hit)
   end
 
+  it "can give up" do
+    subject.give_up
+    expect(subject.bank).to eq(0)
+  end
+
 end
