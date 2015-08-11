@@ -30,7 +30,7 @@ module ScriptWarsBlackjack
     end
 
     def make_bet(player_state)
-      @ai = ai_class.new if @ai.nil?
+      @ai ||= ai_class.new
       potential_bet = @ai.place_bet(player_state)
       if potential_bet < @bank
         @current_bet = potential_bet
@@ -40,7 +40,7 @@ module ScriptWarsBlackjack
     end
 
     def take_turn(player_state)
-      @ai = ai_class.new if @ai.nil?
+      @ai ||= ai_class.new
       move = @ai.take_turn(player_state)
 
       fail ScriptWarsBlackjack::InvalidMoveError,
